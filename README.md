@@ -10,7 +10,7 @@ A browser extension for quick [yellkey](http://www.yellkey.com) generation and e
 - Higher Res Icon
 
 ## Safari Installation:
-1.
+1. [Download Extension](https://github.com/atfinke/YellKey-Extension/releases/download/2.0/YellKey.safariextz)
 
 ## Chrome Installation:
 1. [Download Safari](http://apple.com/)
