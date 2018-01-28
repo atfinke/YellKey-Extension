@@ -1,7 +1,7 @@
 # YellKey Browser Extensions
 A browser extension for quick [yellkey](http://www.yellkey.com) generation and entry.
 
-## Fork Diffs
+## Fork Diff
 
 - Animations
 - Multi-Window Support
