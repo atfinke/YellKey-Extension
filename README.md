@@ -3,12 +3,17 @@ A browser extension for quick [yellkey](http://www.yellkey.com) generation and e
 
 ## Fork Diff
 
-- Animations
+### Features
 - Multi-Window Support
-- YellKey Entry (respects ↵ vs ⌘↵)
-- Delta Orange Spinner
-- Higher Res Icon
 - Keyboard Shortcut (⌘⇧K)
+- YellKey Entry (respects ↵ vs ⌘↵)
+
+### Enhancements
+- Animations
+- Delta Orange Spinner
+- San Francisco Font
+- Reduced Popover Size
+- Higher Res Icon
 
 ## Safari Installation:
 1. [Download Extension](https://github.com/atfinke/YellKey-Extension/raw/master/dist/Yellkey.safariextz)
