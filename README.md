@@ -11,7 +11,7 @@ A browser extension for quick [yellkey](http://www.yellkey.com) generation and e
 - Keyboard Shortcut (⌘⇧K)
 
 ## Safari Installation:
-1. [Download Extension](https://github.com/atfinke/YellKey-Extension/releases/download/2.1/YellKey.safariextz)
+1. [Download Extension](https://github.com/atfinke/YellKey-Extension/raw/master/dist/Yellkey.safariextz)
 
 ## Chrome Installation:
 1. [Download Safari](http://apple.com/)
