@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<meta charset=utf-8 />
+
+<head>
+  <script type="text/javascript" charset="utf-8" src="jquery-3.2.1.min.js"></script>
+  <style type="text/css">
+    body {
+      font-family: -apple-system;
+    }
+
+    h4 {
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    input {
+      box-sizing: border-box;
+      width: 100%;
+      outline: none;
+    }
+
+    #loader {
+      border: 4px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 4px solid #FBAF3C;
+      width: 10px;
+      height: 10px;
+      margin: auto;
+      margin-top: 10px;
+
+      animation: spin 0.75s linear infinite;
+    }
+
+    #container {
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+
+      width: 90%;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <script type="text/javascript" charset="utf-8">
+    function reset() {
+      $("#start").hide()
+      $("#loader").show();
+      $('#key-input').val("");
+
+      document.getElementById("key-input").onkeydown = function(e) {
+        var val = $('#key-input').val();
+        if (e.keyCode === 13 && val != "") {
+          $('#key-input').val("");
+          safari.self.hide();
+
+          var url = "http://www.yellkey.com/" + val;
+          var tab;
+          if (e.metaKey) {
+            tab = safari.application.activeBrowserWindow.openTab();
+          } else {
+            tab = safari.application.activeBrowserWindow.activeTab;
+          }
+          tab.url = url;
+        }
+
+      };
+    }
+
+    function addLink(link) {
+      // You will witness my animation
+      setTimeout(
+        function() {
+          $("#loader").fadeOut('slow', function() {
+            // Really, JavaScript?
+            $("#start").text(link.charAt(0).toUpperCase() + link.slice(1));
+            $("#start").fadeIn('slow');
+          });
+        }, 200);
+
+    }
+  </script>
+</head>
+
+<body>
+  <div>
+    <div id="loader"></div>
+    <h4 id="start"></h4>
+    <div id="container">
+      <input type="text" id="key-input" placeholder="Open Key... (↵)" spellcheck="false">
+    </div>
+  </div>
+</body>
+
+</html>
