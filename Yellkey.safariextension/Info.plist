@@ -3,19 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>Author</key>
-	<string>y3sh, kapil</string>
+	<string>y3sh, kapil, andrew</string>
 	<key>Builder Version</key>
 	<string>13604.4.7.1.3</string>
 	<key>CFBundleDisplayName</key>
-	<string>Yellkey</string>
+	<string>YellKey</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.yellkey.yellkey-extension</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>2.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>Chrome</key>
 	<dict>
 		<key>Global Page</key>
@@ -26,11 +26,11 @@
 				<key>Filename</key>
 				<string>popover.html</string>
 				<key>Height</key>
-				<real>40</real>
+				<integer>60</integer>
 				<key>Identifier</key>
 				<string>myPopover</string>
 				<key>Width</key>
-				<real>250</real>
+				<integer>100</integer>
 			</dict>
 		</array>
 		<key>Toolbar Items</key>
@@ -60,7 +60,7 @@
 		</dict>
 	</dict>
 	<key>Description</key>
-	<string>Yellkey links</string>
+	<string>YellKey links</string>
 	<key>DeveloperIdentifier</key>
 	<string>23NCCP9F44</string>
 	<key>ExtensionInfoDictionaryVersion</key>

@@ -2,9 +2,16 @@
 <html>
 <head>
   <script type="text/javascript" charset="utf-8">
-    safari.application.addEventListener("command", function (e) {
-      if (e.command === "buttonclick") {
 
+    safari.application.addEventListener("command", function (e) {
+      var activeItem = safari.extension.toolbarItems.filter(function (button) {
+        return button.browserWindow == safari.application.activeBrowserWindow;
+      })[0];
+
+      safari.extension.popovers[0].contentWindow.reset();
+      activeItem.showPopover();
+
+      if (e.command === "buttonclick") {
         var longUrl = safari.application.activeBrowserWindow.activeTab.url;
         var url = "http://www.yellkey.com/api/new?url=" + longUrl + "&time=5";
 
@@ -16,12 +23,12 @@
           if (http.readyState == 4 && http.status == 200) {
             var yellkey = JSON.parse(http.responseText).key;
             safari.extension.popovers[0].contentWindow.addLink(yellkey);
-            safari.extension.toolbarItems[0].showPopover();
           }
         };
         http.send();
       }
     }, false);
+    
   </script>
 </head>
 <body></body>
