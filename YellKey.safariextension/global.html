@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <script type="text/javascript" charset="utf-8">
+
     safari.application.addEventListener("message", showPopover, false);
-    safari.application.addEventListener("command", function(e) {
+    safari.application.addEventListener("command", function (e) {
       if (e.command === "buttonclick") {
         showPopover();
       }
     }, false);
 
     function showPopover() {
-      var activeItem = safari.extension.toolbarItems.filter(function(button) {
+      var activeItem = safari.extension.toolbarItems.filter(function (button) {
         return button.browserWindow == safari.application.activeBrowserWindow;
       })[0];
 
       safari.extension.popovers[0].contentWindow.reset();
       activeItem.showPopover();
 
-      fetchKey();
-    }
-
-    function fetchKey() {
       var longUrl = safari.application.activeBrowserWindow.activeTab.url;
       var url = "http://www.yellkey.com/api/new?url=" + longUrl + "&time=" + safari.extension.settings.time;
 
@@ -29,36 +25,16 @@
       http.open("GET", url, true);
       http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-      http.onreadystatechange = function() { //Call a function when the state changes.
+      http.onreadystatechange = function () {//Call a function when the state changes.
         if (http.readyState == 4 && http.status == 200) {
           var yellkey = JSON.parse(http.responseText).key;
-          if (safari.extension.settings.rejectKeys) {
-            var soundRequest = new XMLHttpRequest();
-            var soundURL = "https://api.datamuse.com/words?sl=" + yellkey;
-            soundRequest.open("GET", soundURL, true);
-            soundRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-            soundRequest.onreadystatechange = function() { //Call a function when the state changes.
-              if (soundRequest.readyState == 4 && soundRequest.status == 200) {
-                var soundResponse = JSON.parse(soundRequest.responseText);
-                if (Array.isArray(soundResponse) && soundResponse.length > 1 && soundResponse[1]["score"] != 100) {
-                  safari.extension.popovers[0].contentWindow.addLink(yellkey);
-                } else {
-                  fetchKey();
-                }
-              }
-            };
-            soundRequest.send();
-          } else {
-            safari.extension.popovers[0].contentWindow.addLink(yellkey);
-          }
+          safari.extension.popovers[0].contentWindow.addLink(yellkey);
         }
       };
       http.send();
     }
+
   </script>
 </head>
-
 <body></body>
-
 </html>
