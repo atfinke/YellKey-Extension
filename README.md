@@ -11,7 +11,7 @@ A browser extension for quick [yellkey](http://www.yellkey.com) generation and e
 
 ### Enhancements
 - Animations
-- Delta Orange Spinner
+- Delta Orange Spinner (Customizable)
 - San Francisco Font
 - Reduced Popover Size
 - Higher Res Icon

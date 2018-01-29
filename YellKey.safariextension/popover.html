@@ -21,9 +21,8 @@
     }
 
     #loader {
-      border: 4px solid #f3f3f3;
+      border: 4px solid #DADADA;
       border-radius: 50%;
-      border-top: 4px solid #FBAF3C;
       width: 10px;
       height: 10px;
       margin: auto;
@@ -55,6 +54,7 @@
   <script type="text/javascript" charset="utf-8">
     function reset() {
       $("#start").hide()
+      document.getElementById("loader").style.setProperty('border-top', '4px solid ' + safari.extension.settings.color);
       $("#loader").show();
       $('#key-input').val("");
 
