@@ -7,6 +7,7 @@ A browser extension for quick [yellkey](http://www.yellkey.com) generation and e
 - Multi-Window Support
 - Keyboard Shortcut (⌘⇧K)
 - YellKey Entry (respects ↵ vs ⌘↵)
+- Set Key Lifetime
 
 ### Enhancements
 - Animations

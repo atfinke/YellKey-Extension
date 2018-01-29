@@ -19,7 +19,7 @@
       activeItem.showPopover();
 
       var longUrl = safari.application.activeBrowserWindow.activeTab.url;
-      var url = "http://www.yellkey.com/api/new?url=" + longUrl + "&time=5";
+      var url = "http://www.yellkey.com/api/new?url=" + longUrl + "&time=" + safari.extension.settings.time;
 
       var http = new XMLHttpRequest();
       http.open("GET", url, true);

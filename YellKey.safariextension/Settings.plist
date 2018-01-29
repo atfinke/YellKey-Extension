@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>DefaultValue</key>
+		<string>5</string>
+		<key>Key</key>
+		<string>time</string>
+		<key>Title</key>
+		<string>Key Lifetime</string>
+		<key>Titles</key>
+		<array>
+			<string>5 minutes</string>
+			<string>30 minutes</string>
+			<string>1 hour</string>
+			<string>24 hours</string>
+		</array>
+		<key>Type</key>
+		<string>PopUpButton</string>
+		<key>Values</key>
+		<array>
+			<string>5</string>
+			<string>30</string>
+			<string>60</string>
+			<string>1,440</string>
+		</array>
+	</dict>
+</array>
+</plist>
